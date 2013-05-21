@@ -621,7 +621,7 @@ void X86AsmPrinter::EmitEndOfAsmFile(Module &M) {
           name = " /EXPORT:";
         else
           name = " -export:";
-        name += DLLExportedGlobals[i]->getName();
+        name += DLLExportedGlobals[i]->getName().substr(1);
         if (Subtarget->isTargetWindows())
           name += ",DATA";
         else
@@ -634,7 +634,7 @@ void X86AsmPrinter::EmitEndOfAsmFile(Module &M) {
           name = " /EXPORT:";
         else
           name = " -export:";
-        name += DLLExportedFns[i]->getName();
+        name += DLLExportedFns[i]->getName().substr(1); 
         OutStreamer.EmitBytes(name, 0);
       }
     }
