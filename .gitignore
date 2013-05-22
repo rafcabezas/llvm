@@ -36,4 +36,4 @@ projects/*
 !projects/CMakeLists.txt
 !projects/Makefile
 # Clang, which is tracked independently.
-tools/clang
+#tools/clang #now tracked as a module
